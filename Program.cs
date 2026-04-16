@@ -2,51 +2,30 @@
 {
     private static void Main(string[] args)
     {
-        Console.WriteLine("escriba dos valores numericos");
-        double num1 = Convert.ToDouble(Console.ReadLine());
-        double num2 = Convert.ToDouble(Console.ReadLine());
+        Console.WriteLine("Rango de estudiantes");
+        Console.WriteLine("Ingrese una letra (A, B, C, D, F)");
+        char letra = char.ToUpper(Console.ReadKey().KeyChar);
+        Console.WriteLine();
 
-        Console.WriteLine("\n***Menu principal***");
-        Console.WriteLine("1- Suma");
-        Console.WriteLine("2- Resta");
-        Console.WriteLine("3- Multiplicación");
-        Console.WriteLine("4- División");
-        Console.WriteLine("5- Salir");
-        Console.Write("Digite el valor segun sea la operacion: []");
-        int opc= Convert.ToInt32(Console.ReadLine());
-
-        string msj = "";
-        double result=0;
-        switch (opc)
-        {
-            case 1:
-                msj = "la suma es:";
-                result = num1 + num2;
+        switch (letra) { 
+        case 'A': 
+            Console.WriteLine("Excelente");
                 break;
-            case 2:
-                msj = "la resta es:";
-                result = num1 - num2;
+        case 'B':
+             Console.WriteLine("Bueno");
                 break;
-            case 3:
-                msj = "la multiplicación es:";
-                result = num1 * num2;
+        case 'C':
+             Console.WriteLine("Regular");
                 break;
-            case 4:
-                msj = "la división es:";
-                result = num1 / num2;
+        case 'D':
+             Console.WriteLine("Deficiente");
                 break;
-            case 5:
-                msj = "Saliendo del sistema";
+        case 'F':
+             Console.WriteLine("Reprobado");
                 break;
-            default:
-                msj = "dijite una opcion valida:";
-                break ;
+        default:
+                Console.WriteLine("Escriba una letra valida");
+                break;
         }
-        Console.Clear();
-        Console.BackgroundColor = ConsoleColor.Green;
-        Console.ForegroundColor = ConsoleColor.Blue;
-        Console.WriteLine(msj);
-        Console.WriteLine(result);
     }
-
 }
