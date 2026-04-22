@@ -1,0 +1,31 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        double precio = 650;
+        double precioIVA = precio * 1.12;
+
+        Console.Write("Cantidad: ");
+        int cantidad = Convert.ToInt32(Console.ReadLine());
+
+        Console.WriteLine("1. Efectivo\n2. Tarjeta\n3. Vale");
+        int opcion = Convert.ToInt32(Console.ReadLine());
+
+        double total = precioIVA * cantidad;
+        double descuento = 0;
+
+        switch (opcion)
+        {
+            case 1: descuento = total * 0.10; break;
+            case 2: descuento = total * 0.05; break;
+            case 3: descuento = total * 0.15; break;
+        }
+
+        double totalFinal = total - descuento;
+
+        Console.WriteLine("Precio con IVA: " + precioIVA);
+        Console.WriteLine("Total sin descuento: " + total);
+        Console.WriteLine("Descuento: " + descuento);
+        Console.WriteLine("Total a pagar: " + totalFinal);
+    }
+}
