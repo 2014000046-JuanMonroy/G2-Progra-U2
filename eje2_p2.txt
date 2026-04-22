@@ -1,0 +1,16 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.Write("Ingrese un carácter: ");
+        char c = Console.ReadKey().KeyChar;
+        Console.WriteLine();
+
+        if (char.IsDigit(c))
+            Console.WriteLine("Es un dígito");
+        else if ("aeiouAEIOU".Contains(c))
+            Console.WriteLine("Es vocal");
+        else
+            Console.WriteLine("Ninguno");
+    }
+}
