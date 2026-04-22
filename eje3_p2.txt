@@ -1,0 +1,27 @@
+internal class Program
+{
+    private static void Main(string[] args)
+    {
+        Console.WriteLine("1. Palco\n2. Tribuna\n3. Preferencia\n4. Generales");
+        int sector = Convert.ToInt32(Console.ReadLine());
+
+        Console.Write("Cantidad: ");
+        int cantidad = Convert.ToInt32(Console.ReadLine());
+
+        double precio = 0;
+
+        switch (sector)
+        {
+            case 1: precio = 300; break;
+            case 2: precio = 100; break;
+            case 3: precio = 50; break;
+            case 4: precio = 30; break;
+            default:
+                Console.WriteLine("Sector inválido");
+                return;
+        }
+
+        double total = precio * cantidad;
+        Console.WriteLine("Total: Q" + total);
+    }
+}
